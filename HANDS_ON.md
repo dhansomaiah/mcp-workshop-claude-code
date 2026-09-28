@@ -2,7 +2,7 @@
 
 ## Warm-up (~2 min) — make sure Claude Code sees our server
 
-1. Open a terminal at the repo root of your Codespace.
+1. Open a terminal at the repo root (after running `setup.ps1` — see `README.md` if you haven't).
 2. Run `claude`. First time only: approve the folder trust prompt and the `component-workshop` MCP server prompt.
 3. Run `/mcp` — you should see `component-workshop` listed with two tools. (This repo's `.claude/settings.json` blocks Claude's built-in file tools from reading `data/` directly — same idea as Copilot's "uncheck every tool except component-workshop," just enforced as a project setting instead of a per-session click.)
 4. Ask Claude:

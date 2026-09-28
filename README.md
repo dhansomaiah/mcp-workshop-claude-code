@@ -2,17 +2,21 @@
 
 Build your first MCP server in 30 minutes.
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/dhansomaiah/mcp-workshop-claude-code)
+**Prerequisites (before the workshop):** Python 3.10+ and the [Claude Code](https://code.claude.com/docs/en/quickstart) CLI, both installed and on your PATH. If you don't have Python: `winget install Python.Python.3.11 -e`.
 
 ## What's inside
 
 A tiny MCP server that serves synthetic embedded-flavored data — fake components (like `CM101A`) and fake NTC fault codes — plus a `.mcp.json` that hands it to **Claude Code** as a tool source. You'll add tools during the workshop and ask Claude to use them.
 
-## Quick start (in Codespaces)
+## Quick start (local clone, Windows)
 
-1. Click **Open in Codespaces** above.
-2. Wait ~90 seconds for the environment to build (`pip install` and the Claude Code CLI install run automatically).
-3. Open a terminal and run:
+1. Clone this repo and open a terminal in it.
+2. Run the setup script:
+   ```
+   powershell -ExecutionPolicy Bypass -File setup.ps1
+   ```
+   It checks Python and Claude Code are on PATH, then installs the Python dependencies.
+3. Run:
    ```
    claude
    ```
@@ -32,6 +36,7 @@ That's the whole loop. The workshop tasks are edits to it — see `HANDS_ON.md`.
 - `.claude/settings.json` — blocks Claude's built-in file tools from reading `data/` directly, so it's forced to go through your MCP tools instead of just opening the CSV
 - `data/` — synthetic components and NTCs
 - `client.py` — optional stdio client, prints raw wire messages (no AI)
+- `setup.ps1` — one-time local setup (checks Python/Claude Code, installs dependencies)
 - `HANDS_ON.md` — the two workshop tasks
 - `CHEAT_SHEET.md` — restarts, common errors, troubleshooting
 - `SOLUTION.md` — peek only if Claude stalls

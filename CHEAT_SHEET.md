@@ -40,9 +40,20 @@ Parameter names in your function signature must match what Claude passes, case-s
 
 Check that `.claude/settings.json` still has its `permissions.deny` block for `data/**`, and that you're in the same folder that file lives in (permission settings are per-project). If it's intact and Claude still bypasses your tool, explicitly tell it in the prompt to use its available tools instead of reading files.
 
-## Editing in Codespaces
+## `setup.ps1` won't run ("running scripts is disabled on this system")
 
-- File tree on the left. Save with `Ctrl+S`.
+Windows blocks unsigned scripts by default. Run it with the bypass flag instead of double-clicking it:
+
+```
+powershell -ExecutionPolicy Bypass -File setup.ps1
+```
+
+This only affects that one invocation, not your machine's global policy.
+
+## `python` / `claude` not found on PATH
+
+- `python`: install with `winget install Python.Python.3.11 -e`, then open a **new** terminal (PATH changes don't apply to already-open ones).
+- `claude`: make sure it's installed per your org's instructions before the workshop — `setup.ps1` checks for it and won't silently continue if it's missing.
 
 ## Optional: the `python client.py` fallback
 
