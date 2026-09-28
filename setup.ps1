@@ -23,13 +23,6 @@ if ($versionOutput -match "Python (\d+)\.(\d+)") {
 
 Write-Host "Found $versionOutput" -ForegroundColor Green
 
-$claude = Get-Command claude -ErrorAction SilentlyContinue
-if (-not $claude) {
-    Write-Host "Claude Code CLI was not found on PATH. Make sure it's installed before the workshop." -ForegroundColor Red
-    exit 1
-}
-Write-Host "Found Claude Code CLI: $($claude.Source)" -ForegroundColor Green
-
 Write-Host "Installing Python dependencies..." -ForegroundColor Cyan
 pip install -r requirements.txt
 if ($LASTEXITCODE -ne 0) {

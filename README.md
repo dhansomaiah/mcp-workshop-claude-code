@@ -2,7 +2,7 @@
 
 Build your first MCP server in 30 minutes.
 
-**Prerequisites (before the workshop):** Python 3.10+ and the [Claude Code](https://code.claude.com/docs/en/quickstart) CLI, both installed and on your PATH. If you don't have Python: `winget install Python.Python.3.11 -e`.
+**Prerequisites (before the workshop):** Python 3.10+ on your PATH. If you don't have it: `winget install Python.Python.3.11 -e`.
 
 ## What's inside
 
@@ -15,7 +15,7 @@ A tiny MCP server that serves synthetic embedded-flavored data — fake componen
    ```
    powershell -ExecutionPolicy Bypass -File setup.ps1
    ```
-   It checks Python and Claude Code are on PATH, then installs the Python dependencies.
+   It checks Python is on PATH, then installs the Python dependencies.
 3. Run:
    ```
    claude
@@ -36,7 +36,7 @@ That's the whole loop. The workshop tasks are edits to it — see `HANDS_ON.md`.
 - `.claude/settings.json` — blocks Claude's built-in file tools from reading `data/` directly, so it's forced to go through your MCP tools instead of just opening the CSV
 - `data/` — synthetic components and NTCs
 - `client.py` — optional stdio client, prints raw wire messages (no AI)
-- `setup.ps1` — one-time local setup (checks Python/Claude Code, installs dependencies)
+- `setup.ps1` — one-time local setup (checks Python, installs dependencies)
 - `HANDS_ON.md` — the two workshop tasks
 - `CHEAT_SHEET.md` — restarts, common errors, troubleshooting
 - `SOLUTION.md` — peek only if Claude stalls

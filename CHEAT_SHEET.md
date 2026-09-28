@@ -50,10 +50,9 @@ powershell -ExecutionPolicy Bypass -File setup.ps1
 
 This only affects that one invocation, not your machine's global policy.
 
-## `python` / `claude` not found on PATH
+## `python` not found on PATH
 
-- `python`: install with `winget install Python.Python.3.11 -e`, then open a **new** terminal (PATH changes don't apply to already-open ones).
-- `claude`: make sure it's installed per your org's instructions before the workshop — `setup.ps1` checks for it and won't silently continue if it's missing.
+Install with `winget install Python.Python.3.11 -e`, then open a **new** terminal (PATH changes don't apply to already-open ones).
 
 ## Optional: the `python client.py` fallback
 
