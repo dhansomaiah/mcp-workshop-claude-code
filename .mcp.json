@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "component-workshop": {
+      "command": "python",
+      "args": ["server.py"]
+    }
+  }
+}

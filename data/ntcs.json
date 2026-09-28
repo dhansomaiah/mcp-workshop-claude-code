@@ -1,0 +1,64 @@
+{
+  "CM101A": [
+    {"ntc": "0x031", "type": "Sensor",       "priority": "High",   "description": "Motor angle correlation loss"},
+    {"ntc": "0x032", "type": "Sensor",       "priority": "Medium", "description": "Motor angle drift out of range"}
+  ],
+  "CM101B": [
+    {"ntc": "0x041", "type": "Arbitration",  "priority": "High",   "description": "Motor angle arbitration failure"}
+  ],
+  "CM620A": [
+    {"ntc": "0x0A2", "type": "Control",      "priority": "Medium", "description": "Velocity return path saturated"}
+  ],
+  "ES249A": [
+    {"ntc": "0x101", "type": "Sensor",       "priority": "High",   "description": "Handwheel torque estimate invalid"},
+    {"ntc": "0x102", "type": "Sensor",       "priority": "Medium", "description": "Handwheel torque sensor offset drift"}
+  ],
+  "ES249B": [
+    {"ntc": "0x111", "type": "Arbitration",  "priority": "High",   "description": "Handwheel torque arbitration mismatch"}
+  ],
+  "ES311A": [
+    {"ntc": "0x120", "type": "Control",      "priority": "Low",    "description": "Torque rate limit exceeded"}
+  ],
+  "AR200A": [
+    {"ntc": "0x201", "type": "Arbitration",  "priority": "High",   "description": "Ford handwheel angle arbitration disagreement"}
+  ],
+  "AR200B": [
+    {"ntc": "0x211", "type": "Arbitration",  "priority": "High",   "description": "GM handwheel angle arbitration disagreement"}
+  ],
+  "AR305A": [
+    {"ntc": "0x230", "type": "Arbitration",  "priority": "Medium", "description": "Sensor arbitration primary source lost"}
+  ],
+  "DG100A": [
+    {"ntc": "0x301", "type": "Diagnostic",   "priority": "Low",    "description": "Sensor monitor watchdog timeout"}
+  ],
+  "DG100B": [
+    {"ntc": "0x311", "type": "Diagnostic",   "priority": "Low",    "description": "Motor monitor watchdog timeout"}
+  ],
+  "DG201A": [
+    {"ntc": "0x330", "type": "Diagnostic",   "priority": "High",   "description": "Fault response manager entered degraded state"}
+  ],
+  "IO150A": [
+    {"ntc": "0x401", "type": "Communication","priority": "Medium", "description": "CAN RX frame missing beyond timeout"}
+  ],
+  "IO150B": [
+    {"ntc": "0x411", "type": "Communication","priority": "Medium", "description": "CAN TX buffer overflow"}
+  ],
+  "IO220A": [
+    {"ntc": "0x421", "type": "Communication","priority": "Low",    "description": "LIN slave no response"}
+  ],
+  "PW400A": [
+    {"ntc": "0x501", "type": "Power",        "priority": "High",   "description": "Battery voltage out of operating range"}
+  ],
+  "PW400B": [
+    {"ntc": "0x511", "type": "Power",        "priority": "High",   "description": "Current draw exceeded fuse rating"}
+  ],
+  "PW412A": [
+    {"ntc": "0x520", "type": "Power",        "priority": "Medium", "description": "MOSFET junction temperature above derating threshold"}
+  ],
+  "SF500A": [
+    {"ntc": "0x601", "type": "Safety",       "priority": "High",   "description": "Safety state machine entered SAFE_STATE"}
+  ],
+  "SF500B": [
+    {"ntc": "0x611", "type": "Safety",       "priority": "High",   "description": "Degraded mode active — assist reduced"}
+  ]
+}

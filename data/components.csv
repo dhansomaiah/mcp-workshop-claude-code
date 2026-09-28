@@ -1,0 +1,21 @@
+id,name,owner,family,subsystem
+CM101A,MotAgCorrln,Dave Smith,Motor Control,EPS
+CM101B,MotAgArbn,Dave Smith,Motor Control,EPS
+CM620A,CtrldVelRtn,Alice Johnson,Motor Control,EPS
+ES249A,HwTqEstm,Bob Brown,Sensors,EPS
+ES249B,HwTqArbn,Bob Brown,Sensors,EPS
+ES311A,TorqRateLmt,Sarah Miller,Sensors,EPS
+AR200A,FordHwAgArbn,John Davis,Arbitration,EPS
+AR200B,GmHwAgArbn,John Davis,Arbitration,EPS
+AR305A,SnsrArbnPri,Dave Smith,Arbitration,Braking
+DG100A,DiagMonSensor,Alice Johnson,Diagnostics,EPS
+DG100B,DiagMonMotor,Alice Johnson,Diagnostics,EPS
+DG201A,FaultRespMgr,Bob Brown,Diagnostics,Powertrain
+IO150A,CanRxHandler,Sarah Miller,Communication,Gateway
+IO150B,CanTxHandler,Sarah Miller,Communication,Gateway
+IO220A,LinRxHandler,Sarah Miller,Communication,Gateway
+PW400A,VoltMonitor,John Davis,Power,ECU
+PW400B,CurrLimiter,John Davis,Power,ECU
+PW412A,TempDerating,Dave Smith,Power,ECU
+SF500A,SafetyStateMc,Alice Johnson,Safety,EPS
+SF500B,DegradedMode,Alice Johnson,Safety,EPS
