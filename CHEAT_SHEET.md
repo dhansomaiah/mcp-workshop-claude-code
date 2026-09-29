@@ -12,7 +12,7 @@ This respawns the server and gives you a fresh conversation. Then re-ask your qu
 ## Claude Code doesn't see the `component-workshop` tools
 
 - Run `/mcp` — it lists connected servers and their tools, plus an error log for any that failed to start.
-- Make sure you started `claude` from the repo root. Claude Code looks for `.mcp.json` in the current directory, and `server.py` reads `data/` relative to its own location — if the server itself isn't launched from the repo root you'll get path errors (see below).
+- Make sure you started `claude` from the repo root — i.e. the `mcp-workshop-claude-code` folder that `git clone` created, not the parent folder you ran the clone command from. Run `dir` (or check your prompt) and confirm you see `server.py`, `.mcp.json`, etc. right there. Claude Code looks for `.mcp.json` in the current directory, and `server.py` reads `data/` relative to its own location — if the server itself isn't launched from the repo root you'll get path errors (see below).
 - Open `.mcp.json` — it should have an `mcpServers.component-workshop` block.
 - If you declined the project's MCP-server trust prompt by mistake, run `claude mcp reset-project-choices` and restart `claude` to be asked again.
 

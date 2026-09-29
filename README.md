@@ -10,7 +10,12 @@ A tiny MCP server that serves synthetic embedded-flavored data — fake componen
 
 ## Quick start (local clone, Windows)
 
-1. Clone this repo and open a terminal in it.
+1. Create a folder somewhere for the workshop (e.g. on your Desktop), open a terminal there, and clone this repo into it:
+   ```
+   git clone https://github.com/dhansomaiah/mcp-workshop-claude-code.git
+   cd mcp-workshop-claude-code
+   ```
+   `git clone` creates its own `mcp-workshop-claude-code` subfolder — make sure you `cd` into it before continuing. Everything below assumes your terminal is inside that folder.
 2. Run the setup script:
    ```
    powershell -ExecutionPolicy Bypass -File setup.ps1
