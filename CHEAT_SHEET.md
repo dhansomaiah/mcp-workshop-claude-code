@@ -52,7 +52,7 @@ This only affects that one invocation, not your machine's global policy.
 
 ## `python` not found on PATH
 
-Install with `winget install Python.Python.3.11 -e`, then open a **new** terminal (PATH changes don't apply to already-open ones).
+Python 3.10+ needs to be installed and on PATH before the workshop — see your team's pre-req instructions. If you just installed it, open a **new** terminal (PATH changes don't apply to already-open ones).
 
 ## Optional: the `python client.py` fallback
 

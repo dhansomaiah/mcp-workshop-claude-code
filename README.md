@@ -2,7 +2,7 @@
 
 Build your first MCP server in 30 minutes.
 
-**Prerequisites (before the workshop):** Python 3.10+ on your PATH. If you don't have it: `winget install Python.Python.3.11 -e`.
+**Prerequisites (before the workshop):** Python 3.10+ installed and on your PATH.
 
 ## What's inside
 
