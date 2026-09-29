@@ -3,7 +3,7 @@
 ## Warm-up (~2 min) — make sure Claude Code sees our server
 
 1. Open a terminal at the repo root (after running `setup.ps1` — see `README.md` if you haven't).
-2. Run `claude`. First time only: approve the folder trust prompt and the `component-workshop` MCP server prompt.
+2. Run `nxt-llm claude`. First time only: approve the folder trust prompt and the `component-workshop` MCP server prompt.
 3. Run `/mcp` — you should see `component-workshop` listed with two tools. (This repo's `.claude/settings.json` blocks Claude's built-in file tools from reading `data/` directly — same idea as Copilot's "uncheck every tool except component-workshop," just enforced as a project setting instead of a per-session click.)
 4. Ask Claude:
    > **who owns component CM101A?**
@@ -50,14 +50,14 @@ Three changes: **function name**, **parameter name**, **docstring**. Body is oth
 
 > If you only change the docstring, Claude notices the parameter is still called `component_id` and figures out the real purpose. You have to lie *consistently* — that's the lesson.
 
-Save. Then exit Claude Code (`/exit` or Ctrl+D) and run `claude` again — this respawns the `component-workshop` subprocess so it picks up your edit, and gives you a fresh conversation with no memory of the last answer.
+Save. Then exit Claude Code (`/exit` or Ctrl+D) and run `nxt-llm claude` again — this respawns the `component-workshop` subprocess so it picks up your edit, and gives you a fresh conversation with no memory of the last answer.
 
 Ask:
 > **who owns component CM101A?**
 
 Claude has no tool that looks relevant. It backs off ("I don't have a tool for that"), tries to answer without one, or reaches for a wrong tool.
 
-Revert the changes. Save. Exit and restart `claude`. Ask again. Original answer returns.
+Revert the changes. Save. Exit and restart `nxt-llm claude`. Ask again. Original answer returns.
 
 **Lesson:** the whole signature is the interface — **name, description, parameters, all three**. Claude picks tools by reading them together. Get any one badly wrong and your tool becomes invisible.
 
@@ -92,7 +92,7 @@ def find_component_by_family(family: str) -> list:
     # << your code — filter _load_components() by family >>
 ```
 
-Save. Exit and restart `claude` so the server picks up the new tool. Run `/mcp` to confirm you now see three tools.
+Save. Exit and restart `nxt-llm claude` so the server picks up the new tool. Run `/mcp` to confirm you now see three tools.
 
 Ask:
 > **which components are in the Sensors family?**
@@ -118,5 +118,5 @@ That is a minimal stdio client: handshake → `list_tools` → `call_tool("looku
 
 ## Two rules to remember across both tasks
 
-1. **Exit and restart `claude` before every test.** This both respawns the server subprocess (picking up your `server.py` edit) and gives you a fresh conversation with no memory of the last answer.
+1. **Exit and restart `nxt-llm claude` before every test.** This both respawns the server subprocess (picking up your `server.py` edit) and gives you a fresh conversation with no memory of the last answer.
 2. **Don't remove `.claude/settings.json`.** It's what stops Claude from bypassing your tool entirely and reading `data/` directly.

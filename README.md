@@ -23,9 +23,9 @@ A tiny MCP server that serves synthetic embedded-flavored data — fake componen
    It checks Python is on PATH, then installs the Python dependencies.
 3. Run:
    ```
-   claude
+   nxt-llm claude
    ```
-   The first time you run it in this folder, Claude Code will ask to trust the project and to approve the `component-workshop` MCP server from `.mcp.json` — approve both.
+   (Nexteer's standard launcher for Claude Code — routes through the internal AI gateway.) The first time you run it in this folder, Claude Code will ask to trust the project and to approve the `component-workshop` MCP server from `.mcp.json` — approve both.
 4. Run `/mcp` — you should see `component-workshop` connected with two tools.
 5. Ask Claude:
    > **who owns component CM101A?**

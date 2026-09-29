@@ -5,16 +5,16 @@
 Claude Code spawns `component-workshop` as a subprocess when the session starts — it does not pick up edits to `server.py` on its own. After you save an edit:
 
 1. Exit Claude Code: `/exit` or Ctrl+D.
-2. Run `claude` again.
+2. Run `nxt-llm claude` again.
 
 This respawns the server and gives you a fresh conversation. Then re-ask your question.
 
 ## Claude Code doesn't see the `component-workshop` tools
 
 - Run `/mcp` — it lists connected servers and their tools, plus an error log for any that failed to start.
-- Make sure you started `claude` from the repo root — i.e. the `mcp-workshop-claude-code` folder that `git clone` created, not the parent folder you ran the clone command from. Run `dir` (or check your prompt) and confirm you see `server.py`, `.mcp.json`, etc. right there. Claude Code looks for `.mcp.json` in the current directory, and `server.py` reads `data/` relative to its own location — if the server itself isn't launched from the repo root you'll get path errors (see below).
+- Make sure you started `nxt-llm claude` from the repo root — i.e. the `mcp-workshop-claude-code` folder that `git clone` created, not the parent folder you ran the clone command from. Run `dir` (or check your prompt) and confirm you see `server.py`, `.mcp.json`, etc. right there. Claude Code looks for `.mcp.json` in the current directory, and `server.py` reads `data/` relative to its own location — if the server itself isn't launched from the repo root you'll get path errors (see below).
 - Open `.mcp.json` — it should have an `mcpServers.component-workshop` block.
-- If you declined the project's MCP-server trust prompt by mistake, run `claude mcp reset-project-choices` and restart `claude` to be asked again.
+- If you declined the project's MCP-server trust prompt by mistake, run `nxt-llm claude mcp reset-project-choices` and restart `nxt-llm claude` to be asked again.
 
 ## Server won't start (error via `/mcp`)
 
@@ -22,7 +22,7 @@ Run `/mcp` and open the `component-workshop` entry to see its stderr. Usually on
 
 - `ModuleNotFoundError: No module named 'mcp'` → run `pip install -r requirements.txt`
 - `ModuleNotFoundError: No module named 'mcp.server.fastmcp'` → `mcp>=2.0` removed FastMCP; run `pip install --force-reinstall "mcp>=1.11,<2.0"`
-- `FileNotFoundError: components.csv` → you weren't in the repo root when you ran `claude`. `cd` there and restart.
+- `FileNotFoundError: components.csv` → you weren't in the repo root when you ran `nxt-llm claude`. `cd` there and restart.
 - Python syntax error → test the server alone in the terminal: `python server.py` (it should sit silently — stdio servers don't print). If you get a traceback, that's your bug.
 
 ## Tool doesn't appear after adding it
@@ -30,7 +30,7 @@ Run `/mcp` and open the `component-workshop` entry to see its stderr. Usually on
 Almost always one of:
 
 - Missing `@mcp.tool()` decorator (with parentheses) above the function.
-- Forgot to exit and restart `claude` after saving.
+- Forgot to exit and restart `nxt-llm claude` after saving.
 
 ## Tool call gets "Invalid arguments"
 
