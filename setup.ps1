@@ -17,4 +17,4 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 Write-Host ""
-Write-Host "Setup complete. Run 'claude' from this folder to start the workshop." -ForegroundColor Green
+Write-Host "Setup complete. Run 'nxt-llm claude' from this folder to start the workshop." -ForegroundColor Green
