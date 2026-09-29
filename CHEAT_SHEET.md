@@ -1,13 +1,13 @@
 # Cheat sheet
 
-## Restart after editing `server.py`
+## Reload after editing `server.py`
 
 Claude Code spawns `component-workshop` as a subprocess when the session starts — it does not pick up edits to `server.py` on its own. After you save an edit:
 
-1. Exit Claude Code: `/exit` or Ctrl+D.
-2. Run `nxt-llm claude` again.
+1. Run `/mcp`, select `component-workshop`, choose **Reconnect**. This respawns the subprocess so it picks up your edit.
+2. Run `/clear` if the test depends on Claude not remembering a prior answer (Task 1). Without it, Claude may fall back to citing what it said earlier in the conversation instead of genuinely failing — not a bug, just something to be aware of.
 
-This respawns the server and gives you a fresh conversation. Then re-ask your question.
+You don't need to exit Claude Code and run `nxt-llm claude` again — Reconnect is faster and does the same job of restarting the subprocess. Full exit/relaunch still works too if Reconnect ever misbehaves.
 
 ## Claude Code doesn't see the `component-workshop` tools
 
@@ -30,7 +30,7 @@ Run `/mcp` and open the `component-workshop` entry to see its stderr. Usually on
 Almost always one of:
 
 - Missing `@mcp.tool()` decorator (with parentheses) above the function.
-- Forgot to exit and restart `nxt-llm claude` after saving.
+- Forgot to `/mcp` → Reconnect after saving.
 
 ## Tool call gets "Invalid arguments"
 

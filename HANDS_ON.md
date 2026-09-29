@@ -50,14 +50,16 @@ Three changes: **function name**, **parameter name**, **docstring**. Body is oth
 
 > If you only change the docstring, Claude notices the parameter is still called `component_id` and figures out the real purpose. You have to lie *consistently* — that's the lesson.
 
-Save. Then exit Claude Code (`/exit` or Ctrl+D) and run `nxt-llm claude` again — this respawns the `component-workshop` subprocess so it picks up your edit, and gives you a fresh conversation with no memory of the last answer.
+Save. Then reload without leaving Claude Code:
+1. Run `/mcp`, select `component-workshop`, choose **Reconnect** — this respawns the subprocess so it picks up your edit.
+2. Run `/clear` — wipes conversation memory. Skip this and Claude may just cite its *previous* answer from memory instead of genuinely losing the tool, which muddies the lesson.
 
 Ask:
 > **who owns component CM101A?**
 
 Claude has no tool that looks relevant. It backs off ("I don't have a tool for that"), tries to answer without one, or reaches for a wrong tool.
 
-Revert the changes. Save. Exit and restart `nxt-llm claude`. Ask again. Original answer returns.
+Revert the changes. Save. `/mcp` → Reconnect → `/clear`. Ask again. Original answer returns.
 
 **Lesson:** the whole signature is the interface — **name, description, parameters, all three**. Claude picks tools by reading them together. Get any one badly wrong and your tool becomes invisible.
 
@@ -92,7 +94,7 @@ def find_component_by_family(family: str) -> list:
     # << your code — filter _load_components() by family >>
 ```
 
-Save. Exit and restart `nxt-llm claude` so the server picks up the new tool. Run `/mcp` to confirm you now see three tools.
+Save. Run `/mcp`, select `component-workshop`, choose **Reconnect** so the server picks up the new tool (no need for `/clear` here — memory doesn't matter for this task). `/mcp` again to confirm you now see three tools.
 
 Ask:
 > **which components are in the Sensors family?**
@@ -118,5 +120,6 @@ That is a minimal stdio client: handshake → `list_tools` → `call_tool("looku
 
 ## Two rules to remember across both tasks
 
-1. **Exit and restart `nxt-llm claude` before every test.** This both respawns the server subprocess (picking up your `server.py` edit) and gives you a fresh conversation with no memory of the last answer.
-2. **Don't remove `.claude/settings.json`.** It's what stops Claude from bypassing your tool entirely and reading `data/` directly.
+1. **After every `server.py` edit: `/mcp` → select `component-workshop` → Reconnect.** This respawns the server subprocess so your change takes effect — no need to exit Claude Code or relaunch `nxt-llm claude`.
+2. **Follow Reconnect with `/clear` whenever memory could let Claude cheat** (Task 1's "does the tool still work" test). Skip it when memory doesn't matter (Task 2).
+3. **Don't remove `.claude/settings.json`.** It's what stops Claude from bypassing your tool entirely and reading `data/` directly.
